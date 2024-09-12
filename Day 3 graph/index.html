@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chart of data</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">Analysis chart of groups</h1>
+    <div style="text-align: center; width: 600px; height: 300px;">
+        <canvas id="mychart"></canvas>
+    </div>
+    <script>
+        const age = ["Age",20, 21, 22, 23, 24, 25];
+        
+        new Chart(document.getElementById('mychart').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: age,
+                datasets: [
+                   
+                {
+                        label: 'Income',
+                        data: [ 90000, 100000, 110000, 150000],
+                        borderColor: 'orange',
+                        fill: false
+                    }
+                    ,{
+                        label: 'Expensive',
+                        data: [ 10000, 20000, 50000, 100000, 150000],
+                        borderColor: 'blue',
+                        fill: false
+                    }
+                   
+                ]
+            },
+            options: {
+                legend: {
+                    display: true
+                }
+            }
+        });
+    </script>
+</body>
+</html>
